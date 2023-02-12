@@ -108,6 +108,7 @@ List of all used libraries/packages in this stack:
 - [Prettier](https://prettier.io/)
 - [TS Lint](https://palantir.github.io/tslint/)
 - [Next UI](https://nextui.org/)
+  - [CSS Baseline](https://github.com/nextui-org/nextui/blob/eb09f77da4de372ae7e276da663156a4e3cd324b/packages/react/src/css-baseline/css-baseline.tsx)
 - [Use Dark Mode](https://github.com/donavon/use-dark-mode)
 - [React Use](https://github.com/streamich/react-use)
 
