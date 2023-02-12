@@ -20,7 +20,6 @@
   "bugs": {
     "url": "https://github.com/jakubjirous/codesandbox-technical-challenge/issues"
   },
-  "homepage": "https://github.com/jakubjirous/codesandbox-technical-challenge#readme",
   "dependencies": {
     "@nextui-org/react": "^1.0.0-beta.12",
     "@reduxjs/toolkit": "^1.9.2",
