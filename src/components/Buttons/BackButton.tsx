@@ -11,7 +11,6 @@ const S = {
         custom: {
           background: "$colors$shade5",
           color: "$colors$shade2",
-
           "&:hover": {
             background: "$colors$shade4",
           },
@@ -38,12 +37,12 @@ const S = {
 export const BackButton: FC = () => {
   const navigate = useNavigate();
 
-  const handlePress = useCallback(() => {
+  const onPress = useCallback(() => {
     navigate(Paths.HOME);
   }, []);
 
   return (
-    <S.BackButton size="custom" color="custom" onPress={handlePress} aria-label="Navigate Back">
+    <S.BackButton size="custom" color="custom" onPress={onPress} aria-label="Navigate Back">
       <ArrowLeftIcon />
     </S.BackButton>
   );
