@@ -10,6 +10,7 @@ Your requirements are to build a small proof of concept application that shows a
 
 On the first page, users should input a GitHub repository URL and hit submit.
 Then the user is taken to a new page with some basic repository information and the list of active branches that can be moved around on 3 columns. We call this the repository kanban.
+
 By default, branches should be in the first column: `“In Progress”`. Users should be able to move branches to the next column called `“Ready for Review”` and then move them to the final column `“Ready to Merge”`. Because this is a proof of concept, the state of the kanban should only be persisted locally in the browser.
 
 ### Additional notes:
@@ -109,6 +110,7 @@ List of all used libraries/packages in this stack:
 - [TS Lint](https://palantir.github.io/tslint/)
 - [Next UI](https://nextui.org/)
   - [CSS Baseline](https://github.com/nextui-org/nextui/blob/eb09f77da4de372ae7e276da663156a4e3cd324b/packages/react/src/css-baseline/css-baseline.tsx)
+  - [Default Theme](https://nextui.org/docs/theme/default-theme)
 - [Use Dark Mode](https://github.com/donavon/use-dark-mode)
 - [React Use](https://github.com/streamich/react-use)
 
@@ -116,10 +118,12 @@ List of all used libraries/packages in this stack:
 
 Possible future improvements that could be implemented with a larger time budget depending on the final product requirements.
 
+- Support for dragging and dropping branches between columns in kanban board
+- The ability to support multiple languages 
 - Splitting main logic parts to reusable packages (e.g. `yarn workspaces`, `Nx`)
 - Generated code documentation (e.g. `JSDoc`)
-- GIT pre-commit hooks
-- 90 - 100% unit test coverage
+- A pre-commit hook for GIT
+- Unit test coverage between 90 and 100%
 - Automation end-to-end testing (e.g. `Playwright`, `Cypress`)
 - Adding quality gate to CI/CD (e.g. `SonarCloud`)
 - Offline Mode Support
@@ -129,4 +133,5 @@ Possible future improvements that could be implemented with a larger time budget
 
 The result of the technical challenge can be tested live here:
 
-- `// TODO: add live URL here`
+- [Vercel](https://codesandbox-technical-challenge.vercel.app/) 
+- [CodeSandbox IDE](https://codesandbox.io/p/github/jakubjirous/codesandbox-technical-challenge/main?file=%2FREADME.md&workspace=%257B%2522activeFileId%2522%253A%2522cle209xeo0002fnhw0akp5he8%2522%252C%2522openFiles%2522%253A%255B%2522%252FREADME.md%2522%255D%252C%2522sidebarPanel%2522%253A%2522EXPLORER%2522%252C%2522gitSidebarPanel%2522%253A%2522COMMIT%2522%252C%2522spaces%2522%253A%257B%2522cle209z09001d3b6m4xkw6wgs%2522%253A%257B%2522key%2522%253A%2522cle209z09001d3b6m4xkw6wgs%2522%252C%2522name%2522%253A%2522Default%2522%252C%2522devtools%2522%253A%255B%255D%257D%257D%252C%2522currentSpace%2522%253A%2522cle209z09001d3b6m4xkw6wgs%2522%252C%2522spacesOrder%2522%253A%255B%2522cle209z09001d3b6m4xkw6wgs%2522%255D%252C%2522hideCodeEditor%2522%253Afalse%257D) 
