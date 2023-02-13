@@ -18,7 +18,7 @@ export const Column: FC<Props> = ({ status }) => {
       <Grid>
         <p>
           <small>
-            {name} ({total})
+            {name} ({isLoading ? <Loading type="points-opacity" color="currentColor" size="xs" /> : total})
           </small>
         </p>
       </Grid>
