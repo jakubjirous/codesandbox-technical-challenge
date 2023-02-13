@@ -2,8 +2,8 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { isRight } from "fp-ts/Either";
 import { Query } from "../../types";
 import { decodeRepositoryData } from "./decodeRepositoryData";
+import { RootState } from "../../store";
 
-// TODO: check manual fetching mechanism (Jakub Jirous 2023-02-12 12:12:41)
 export const fetchRepository = createAsyncThunk(
   "repository/fetchRepository",
   async ({ owner, repository }: Query, thunkAPI) => {
@@ -32,5 +32,15 @@ export const fetchRepository = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
+  },
+  {
+    condition: (_, { getState }) => {
+      const state = getState() as RootState;
+      const fetchStatus = state.repository.loading;
+
+      if (fetchStatus === "pending") {
+        return false;
+      }
+    },
   }
 );

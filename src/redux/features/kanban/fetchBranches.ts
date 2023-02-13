@@ -2,8 +2,8 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { isRight } from "fp-ts/Either";
 import { Query, Status } from "../../types";
 import { decodeBranchesData } from "./decodeBranchesData";
+import { RootState } from "../../store";
 
-// TODO: check manual fetching mechanism (Jakub Jirous 2023-02-12 12:29:33)
 export const fetchBranches = createAsyncThunk(
   "kanban/fetchBranches",
   async ({ owner, repository }: Query, thunkAPI) => {
@@ -33,5 +33,15 @@ export const fetchBranches = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
+  },
+  {
+    condition: (_, { getState }) => {
+      const state = getState() as RootState;
+      const fetchStatus = state.kanban.loading;
+
+      if (fetchStatus === "pending") {
+        return false;
+      }
+    },
   }
 );
