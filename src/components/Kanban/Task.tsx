@@ -12,9 +12,7 @@ const Half = styled("div", {
   width: "50%",
   height: "100%",
   display: "flex",
-  justifyContent: "flex-start",
   alignItems: "center",
-  paddingLeft: "$space$10",
   variants: {
     disabled: {
       true: {
@@ -57,9 +55,13 @@ const S = {
   }),
   LeftHalf: styled(Half, {
     left: 0,
+    justifyContent: "flex-start",
+    paddingLeft: "$space$10",
   }),
   RightHalf: styled(Half, {
     right: 0,
+    justifyContent: "flex-end",
+    paddingRight: "$space$10",
   }),
 };
 
