@@ -57,7 +57,7 @@ export const Form: FC = () => {
         })
       );
     }
-  }, [url]);
+  }, [url, dispatch]);
 
   useEffect(() => {
     setErrorMessage(undefined);
@@ -81,7 +81,7 @@ export const Form: FC = () => {
       );
       navigate(Paths.KANBAN);
     }
-  }, [isSuccess, isError, isLoading, query]);
+  }, [isSuccess, isError, isLoading, query, dispatch, navigate]);
 
   return (
     <Grid.Container>
