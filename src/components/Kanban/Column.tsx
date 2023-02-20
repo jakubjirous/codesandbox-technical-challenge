@@ -32,7 +32,7 @@ export const Column: FC<Props> = ({ status }) => {
       {isSuccess &&
         branches.map((branch, index) => (
           <Grid key={index}>
-            <Task branch={branch} status={status} />
+            <Task branch={branch} />
           </Grid>
         ))}
     </Grid.Container>

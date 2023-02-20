@@ -52,6 +52,10 @@ const S = {
     lineHeight: "$lineHeights$3",
     letterSpacing: "$letterSpacings$3",
     textAlign: "center",
+    maxWidth: "20vw",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
   }),
   LeftHalf: styled(Half, {
     left: 0,
@@ -66,11 +70,10 @@ const S = {
 };
 
 interface Props {
-  status: Status;
   branch: Branch;
 }
 
-export const Task: FC<Props> = ({ status, branch }) => {
+export const Task: FC<Props> = ({ branch }) => {
   const dispatch = useAppDispatch();
 
   const isLeftDisabled = useMemo(() => branch.status === Status.IN_PROGRESS, [branch]);
@@ -87,7 +90,7 @@ export const Task: FC<Props> = ({ status, branch }) => {
         },
       })
     );
-  }, [status, branch, isLeftDisabled, isRightDisabled]);
+  }, [branch, isLeftDisabled, isRightDisabled, dispatch]);
 
   const onRightClick = useCallback(() => {
     if (isRightDisabled) return;
@@ -100,7 +103,7 @@ export const Task: FC<Props> = ({ status, branch }) => {
         },
       })
     );
-  }, [status, branch, isLeftDisabled, isRightDisabled]);
+  }, [branch, isLeftDisabled, isRightDisabled, dispatch]);
 
   return (
     <S.Card isPressable variant="flat" color="custom">

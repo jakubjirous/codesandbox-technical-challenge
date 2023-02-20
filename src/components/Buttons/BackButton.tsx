@@ -39,7 +39,7 @@ export const BackButton: FC = () => {
 
   const onPress = useCallback(() => {
     navigate(Paths.HOME);
-  }, []);
+  }, [navigate]);
 
   return (
     <S.BackButton size="custom" color="custom" onPress={onPress} aria-label="Navigate Back">
