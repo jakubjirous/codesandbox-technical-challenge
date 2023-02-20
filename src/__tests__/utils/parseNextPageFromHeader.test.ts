@@ -22,6 +22,8 @@ describe("parseNextPageFromHeader", () => {
     ],
   ];
 
+  console.log("test", "test");
+
   test.each(cases)("should parse '%d' as next page from API header", (expected, input) => {
     expect(parseNextPageFromHeader(input)).toEqual(expected);
   });
