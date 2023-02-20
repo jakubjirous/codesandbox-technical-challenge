@@ -6,6 +6,8 @@ import { RootState } from "../../store";
 import { parseNextPageFromHeader } from "../../../utils/parseNextPageFromHeader";
 import { v4 as uuidv4 } from "uuid";
 
+const PER_PAGE = 100;
+
 export const fetchBranches = createAsyncThunk(
   "kanban/fetchBranches",
   async ({ owner, repository }: Query, thunkAPI) => {
@@ -16,7 +18,7 @@ export const fetchBranches = createAsyncThunk(
       // github api pagination
       while (nextPage) {
         const response = await fetch(
-          `${process.env.REACT_APP_API_URL}repos/${owner}/${repository}/branches?page=${nextPage}`
+          `${process.env.REACT_APP_API_URL}repos/${owner}/${repository}/branches?page=${nextPage}&per_page=${PER_PAGE}`
         );
 
         if (!response.ok) {
